@@ -1,23 +1,24 @@
-// next.config.ts
-import type { NextConfig } from 'next';
-import type { Configuration } from 'webpack';
+import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
-  webpack(config: Configuration) {
-    // Exclude `.svg` from the default file loader
-    const fileLoaderRule = config.module?.rules?.find(
-      (rule) => typeof rule === 'object' && rule?.test instanceof RegExp && rule.test.test('.svg')
-    ) as any;
+  webpack(config) {
+    // Find the existing rule that handles image imports
+    const assetRule = config.module?.rules?.find(
+      (rule: any) =>
+        typeof rule === "object" &&
+        rule.test instanceof RegExp &&
+        rule.test.test(".svg")
+    );
 
-    if (fileLoaderRule) {
-      fileLoaderRule.exclude = /\.svg$/;
+    if (assetRule) {
+      assetRule.exclude = /\.svg$/i; // exclude svg from default loader
     }
 
-    // Add custom rule for handling SVGs with @svgr/webpack
+    // Add SVGR loader for .svg
     config.module?.rules?.push({
-      test: /\.svg$/,
+      test: /\.svg$/i,
       issuer: /\.[jt]sx?$/,
-      use: ['@svgr/webpack'],
+      use: ["@svgr/webpack"],
     });
 
     return config;

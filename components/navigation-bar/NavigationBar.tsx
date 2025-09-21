@@ -2,8 +2,11 @@ import React from "react";
 
 import Link from "next/link";
 
-import Image from "next/image";
-import HonoLogo from "@/assets/svgs/hono.svg";
+import HonoSvg from "@/assets/svgs/hono.svg";
+
+
+
+
 
 
 
@@ -14,7 +17,7 @@ const NavigationBar = (props: { className?: string }) => {
     <div className={"container mx-auto" + (props.className ? props.className : "")}>
       <div className="flex flex-row justify-between items-center">
         <div className="flex flex-row gap-2 items-center">
-       <Image src={HonoLogo} alt="Hono's Logo" width={24} height={24} />
+     <HonoSvg className="w-6 h-6" aria-label="Hono Logo" />
 
           <span className="text-2xl font-bold">Hono</span>
         </div>
