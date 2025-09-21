@@ -1,0 +1,5 @@
+/* ⭐️ MOST IMPORT : Integrates TailwindCSS into your project */
+@import "tailwindcss";
+
+/* ⭐️ MOST IMPORT : Integrates DaisyUI into your project */
+@plugin "daisyui";
