@@ -1,7 +1,7 @@
 import React from "react";
 import Image from "next/image";
 import Link from "next/link";
-//@ts-ignore
+//@ts-expect-error
 import HonoSvg from "@/assets/svgs/hono.svg";
 
 const NavigationBar = (props: { className?: string }) => {

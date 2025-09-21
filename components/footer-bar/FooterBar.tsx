@@ -7,7 +7,7 @@ const FooterBar = () => {
         <p className="text-center">
           Released under the MIT License.
           <br />
-          Copyright © 2022-present Yusuke Wada & Hono contributors. "kawaii" logo is created by SAWARATSUKI.
+          Copyright © 2022-present Yusuke Wada &amp; Hono contributors. &quot;kawaii&quot; logo is created by SAWARATSUKI.
         </p>
       </aside>
     </footer>
